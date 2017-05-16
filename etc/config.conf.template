@@ -1,0 +1,12 @@
+[email]
+host : 
+port : 
+username : 
+password : 
+
+[server]
+hostname : localhost
+port : 5000
+
+[app]
+secret_key : 

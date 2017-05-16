@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Create Account</title>
+    </head>
+    <body>
+        <div id="message">
+          {%if message%}
+          {{message}}
+          {%endif%}
+        </div>
+        <form action="/createaccount" method="post">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" tabstop=1 autofocus/>
+            <label for="password1">Password</label>
+            <input type="password" name="password1" id="password1" tabstop=2/>
+            <label for="password">Repeat Password</label>
+            <input type="password" name="password2" id="password2" tabstop=3/>
+            <input type="submit" value="Create" tabstop=4/>
+        </form>
+    </body>
+</html>

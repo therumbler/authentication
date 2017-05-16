@@ -30,7 +30,7 @@ Please don't use this for anything serious.
 
 * Install the requirements (currently only `Flask`) with pip
 
-    pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
 
 
