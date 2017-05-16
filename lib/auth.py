@@ -131,7 +131,7 @@ class Auth():
 
     def send_verification_email(self, email, verification_token):
         if self.config['server']['port'] in ["80", "443"]:
-            url = '%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server'], quote(email), verification_token)
+            url = '%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], quote(email), verification_token)
         else:
             url = '%s:%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server']['port'], quote(email), verification_token)
         
