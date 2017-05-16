@@ -15,7 +15,9 @@ def index():
     if logged_in:
         return 'logged in!'
     else:
-        return 'not logged in. <a href="/login">Click here</a> to login.'
+        return '''not logged in. 
+        <p><a href="/login">Click here</a> to login.</p> 
+        <p><a href="/createaccount">Click here</a> to sign up.</p>'''
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():

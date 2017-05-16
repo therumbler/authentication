@@ -2,6 +2,11 @@
 <html>
     <head>
     <title>Create Account</title>
+    <style type="text/css">
+    label {width: 8em; display: inline-block; padding: 3px 3px;}
+    input{height: 1.9em; width: 50%}
+    input[type=submit]{height: 3em; -webkit-appearance: button;padding: 3px 3px;}
+    </style>
     </head>
     <body>
         <div id="message">
@@ -10,13 +15,22 @@
           {%endif%}
         </div>
         <form action="/createaccount" method="post">
-            <label for="email">E-mail</label>
-            <input type="text" name="email" id="email" tabstop=1 autofocus/>
-            <label for="password1">Password</label>
-            <input type="password" name="password1" id="password1" tabstop=2/>
-            <label for="password">Repeat Password</label>
-            <input type="password" name="password2" id="password2" tabstop=3/>
-            <input type="submit" value="Create" tabstop=4/>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" tabstop=1 autofocus/>
+            </div>
+            <div>
+                <label for="password1">Password</label>
+                <input type="password" name="password1" id="password1" tabstop=2/>
+            </div>
+            <div>
+                <label for="password">Repeat Password</label>
+                <input type="password" name="password2" id="password2" tabstop=3/>
+            </div>
+            <div>
+                <label></label>
+                <input type="submit" value="Create" tabstop=4/>
+            </div>
         </form>
     </body>
 </html>

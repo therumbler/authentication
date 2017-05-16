@@ -2,6 +2,11 @@
 <html>
 	<head>
 	<title>Login</title>
+    <style type="text/css">
+    label {width: 8em; display: inline-block; padding: 3px 3px;}
+    input{height: 1.9em; width: 50%}
+    input[type=submit]{height: 3em; -webkit-appearance: button;padding: 3px 3px;}
+    </style>
 	</head>
 	<body>
         <div id="message">
@@ -10,11 +15,18 @@
           {%endif%}
         </div>
 		<form action="/login" method="post">
-            <label for="email">E-mail</label>
-            <input type="text" name="email" id="email" tabstop=1 autofocus/>
-            <label for="password">Password</label>
-			<input type="password" name="password" id="password" tabstop=2/>
-			<input type="submit" value="Login" tabstop=3/>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" tabstop=1 autofocus/>
+            </div>
+            <div>
+                <label for="password">Password</label>
+    			<input type="password" name="password" id="password" tabstop=2/>
+            </div>
+            <div>
+                 <label>&nbsp;</label>
+    			<input type="submit" value="Login" tabstop=3/>
+            </div>
 		</form>
 	</body>
 </html>
