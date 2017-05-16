@@ -1,11 +1,11 @@
-#Authentication
+# Authentication
 
 This is a crude proof of concept, attempting to use accepted crypto standards for user account creation/verification.
 
 Please don't use this for anything serious.
 
 
-#Setup
+# Setup
 
 * Copy `config.conf.template` to `config.conf`
     mv config.conf.template config.conf
@@ -25,6 +25,8 @@ Please don't use this for anything serious.
     secret_key : 
 
 * Install the requirements (currently only `Flask`) with pip
+
     pip install -r requirements.txt
+
 
 
