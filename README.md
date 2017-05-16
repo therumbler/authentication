@@ -8,9 +8,11 @@ Please don't use this for anything serious.
 # Setup
 
 * Copy `config.conf.template` to `config.conf`
+
     mv config.conf.template config.conf
 
 * fill in the values in `config.conf`
+
     [email]
     host : 
     port : 
