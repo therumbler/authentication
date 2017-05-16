@@ -131,9 +131,9 @@ class Auth():
 
     def send_verification_email(self, email, verification_token):
         if self.config['server']['port'] == 80:
-            url = 'http://%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server'], quote(email), verification_token)
+            url = '%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server'], quote(email), verification_token)
         else:
-            url = 'http://%s:%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server']['port'], quote(email), verification_token)
+            url = '%s:%s/verify?email=%s&token=%s' % (self.config['server']['hostname'], self.config['server']['port'], quote(email), verification_token)
         
         message_string = '''
         A request has been made to create an account.
@@ -172,7 +172,7 @@ class Auth():
         return {
             'success': True,
             'response_code': 200,
-            'response_text': 'Token valid'
+            'response_text': 'Account verified'
         }
 
     def save_user(self, user):
