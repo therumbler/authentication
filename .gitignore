@@ -1,6 +1,6 @@
 !etc/users/.gitkeep
 etc/config.conf
 .DS_Store
-etc/users/*.*
+etc/users/*.json
 venv/
 *.pyc
