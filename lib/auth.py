@@ -7,10 +7,17 @@ import re
 import platform
 import time
 
-from urllib import quote
+try:
+    # Python 2
+    from urllib import quote
+    import ConfigParser
+except ImportError as e:
+    from urllib.parse import quote
+    import configparser as ConfigParser
+
 from email_server import Email
 
-from ConfigParser import ConfigParser
+
 
 class Auth():
     '''
@@ -34,7 +41,13 @@ class Auth():
         self.password_max_length = 128
 
     def load_config(self):
-        config = ConfigParser()
+        try:
+            # Python 3
+            config = ConfigParser.ConfigParser(interpolation=None)
+        except TypeError as e:
+            # Python 2
+            config = ConfigParser.ConfigParser()
+
         path = 'etc/config.conf'
         with open(path) as f:
             config.readfp(f)
@@ -184,7 +197,7 @@ class Auth():
     def login(self, email, password):
         user = self.get_user(email)
         if not user:
-            print 'no user'
+            print ('no user')
             return {
                 'success': False,
                 'response_code': 401,
@@ -192,7 +205,7 @@ class Auth():
             }
 
         if not user.get('verified'):
-            print 'not verified'
+            print ('not verified')
             return {
                 'success': False,
                 'response_code': 401,
@@ -221,7 +234,7 @@ class Auth():
         try:
             with open(filename) as f:
                 response = json.load(f)
-        except IOError, e:
+        except IOError as e:
             return None
 
         return response
@@ -266,7 +279,7 @@ class Auth():
 
                 one_hour = (60 * 60)
                 if (time.time() - creation_time) > one_hour:
-                    print 'removing %s' % filepath
+                    print ('removing {}'.format(filepath))
                     os.remove(filepath)
 
 def main():
@@ -278,7 +291,7 @@ def main():
     password = u'p@ssw0rd'
     response = auth.create_user(email, password1 = password, password2 = password)
     
-    print response
+    print (response)
 
 if __name__ == '__main__':
     main()
