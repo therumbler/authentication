@@ -29,13 +29,13 @@ class Auth():
     https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/
     '''
     def __init__(self):
-        #as at July 2016 20,000 iterations for the
-        #PBKDF2 algorithm are recommended
         if 'lib' in os.getcwd():
             os.chdir('..')
         self.config = {}
         self.load_config()
-        self.iterations = 20000
+        # as of August 2017 40,000 iterations
+        # for the PDKDF2 algorithm are recommended
+        self.iterations = 40000
         
         #prevent DoS attacks by limiting maximum password length
         self.password_max_length = 128
